@@ -1,4 +1,14 @@
-# Fabric Example Mod
+GUNTHER
+#######
+
+the revolutionary "i want to mod but have no clue" Minecraft Modpack
+
+RIP my life
+
+enjoy stupid stuff being added or request something if anyone reads this idk
+
+
+# Made Using Fabric Example Mod
 
 ## Setup
 
