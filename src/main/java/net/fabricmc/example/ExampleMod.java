@@ -21,6 +21,7 @@ public class ExampleMod implements ModInitializer {
 	// public static final RainbowSword FABRIC_ITEM = new RainbowSword(new FabricItemSettings().group(ItemGroup.MISC));
 
 	public static ToolItem RAINBOW_SWORD = new SwordItem(RainbowToolMaterial.INSTANCE, 5, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
+	public static ToolItem NETHER_SWORD = new SwordItem(RainbowToolMaterial.INSTANCE, 100, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
 
 	@Override
 	public void onInitialize() {
@@ -28,6 +29,7 @@ public class ExampleMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		Registry.register(Registry.ITEM, new Identifier("tutorial", "rainbow_sword"), RAINBOW_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("tutorial", "nether_sword"), NETHER_SWORD);
 
 		LOGGER.info("Hello Fabric world!");
 	}
