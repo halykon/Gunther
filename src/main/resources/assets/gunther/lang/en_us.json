@@ -1,4 +1,7 @@
 {
   "item.gunther.rainbow_sword": "Rainbow Sword",
-  "item.gunther.nether_sword": "Nether Sword"
+  "item.gunther.nether_sword": "Nether Sword",
+  "item.gunther.topaz": "Topaz",
+  "block.gunther.topaz_block": "Topaz Ore"
+
 }

@@ -1,6 +1,7 @@
 package dev.halykon.gunther.mixin;
 
 import dev.halykon.gunther.Gunther;
+import dev.halykon.gunther.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -16,7 +17,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Mixin(ItemEntity.class)
 public abstract class ItemEntityMixin extends Entity {
@@ -35,13 +39,17 @@ public abstract class ItemEntityMixin extends Entity {
         Vec3d POS = getPos();
 
         if(ITEM == Items.DIAMOND_SWORD) {
+            List<Item> REQUIRED_ITEMS = Arrays.asList(Items.AMETHYST_SHARD, Items.DIAMOND_SWORD, Items.EMERALD, Items.REDSTONE, ModItems.TOPAZ);
 //            Gunther.LOGGER.info(String.format("Hey, i am a %s at %s, %s, %s", ITEM, POS.getX(), POS.getY(), POS.getZ()));
-            List<ItemEntity> list = this.world.getEntitiesByClass(ItemEntity.class, this.getBoundingBox().expand(0.5D, 0.0D, 0.5D), (itemEntityx) -> {
-                return itemEntityx.getStack().getItem() == Items.GOLDEN_SWORD;
+            List<ItemEntity> ITEMS = this.world.getEntitiesByClass(ItemEntity.class, this.getBoundingBox().expand(0.5D, 0.0D, 0.5D), (itemEntityx) -> {
+                return REQUIRED_ITEMS.contains(itemEntityx.getStack().getItem());
             });
-            list.forEach((entity) -> {
-                Gunther.LOGGER.info(String.format("Item: %s", entity.getStack().getItem()));
-            });
+
+            if(ITEMS.parallelStream().map(itemEntity -> itemEntity.getStack().getItem()).toList().containsAll(REQUIRED_ITEMS)){
+                ITEMS.forEach(ItemEntity::setDespawnImmediately);
+
+                world.spawnEntity(new ItemEntity(world, POS.getX(), POS.getY(), POS.getZ(), new ItemStack(ModItems.RAINBOW_SWORD)));
+            }
         }
     }
 }
