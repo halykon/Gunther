@@ -27,8 +27,8 @@ public class Gunther implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "rainbow_sword"), RAINBOW_SWORD);
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "nether_sword"), NETHER_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("gunther", "rainbow_sword"), RAINBOW_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("gunther", "nether_sword"), NETHER_SWORD);
 
 		LOGGER.info("Hello Fabric world!");
 	}
