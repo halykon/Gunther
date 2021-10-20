@@ -12,6 +12,9 @@ So far, Gunther features:
 - a pretty Rainbow Sword
 - a ridiculously OP Nether Sword
 
+WIP:
+- Poseidon's Trident (needs in game model. pls help)
+- custom ores, detection of item drop locations
 
 # Made Using Fabric Example Mod
 
