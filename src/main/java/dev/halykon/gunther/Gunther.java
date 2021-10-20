@@ -1,4 +1,4 @@
-package dev.halykon.gunter;
+package dev.halykon.gunther;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.Item;

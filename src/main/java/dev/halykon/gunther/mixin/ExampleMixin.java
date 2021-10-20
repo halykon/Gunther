@@ -1,6 +1,6 @@
-package dev.halykon.gunter.mixin;
+package dev.halykon.gunther.mixin;
 
-import dev.halykon.gunter.Gunther;
+import dev.halykon.gunther.Gunther;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

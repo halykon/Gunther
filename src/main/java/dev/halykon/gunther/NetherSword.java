@@ -1,4 +1,4 @@
-package dev.halykon.gunter;
+package dev.halykon.gunther;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

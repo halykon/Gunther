@@ -1,4 +1,4 @@
-package dev.halykon.gunter;
+package dev.halykon.gunther;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
