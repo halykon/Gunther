@@ -1,10 +1,11 @@
 package dev.halykon.gunther;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolItem;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -21,6 +22,7 @@ public class Gunther implements ModInitializer {
 
 	public static ToolItem RAINBOW_SWORD = new SwordItem(RainbowToolMaterial.INSTANCE, 5, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
 	public static ToolItem NETHER_SWORD = new SwordItem(RainbowToolMaterial.INSTANCE, 100, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
+	public static final Block TOPAZ_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
 
 	@Override
 	public void onInitialize() {
@@ -29,6 +31,8 @@ public class Gunther implements ModInitializer {
 		// Proceed with mild caution.
 		Registry.register(Registry.ITEM, new Identifier("gunther", "rainbow_sword"), RAINBOW_SWORD);
 		Registry.register(Registry.ITEM, new Identifier("gunther", "nether_sword"), NETHER_SWORD);
+		Registry.register(Registry.BLOCK, new Identifier("gunther", "topaz_block"), TOPAZ_BLOCK);
+		Registry.register(Registry.ITEM, new Identifier("gunther", "topaz_block"), new BlockItem(TOPAZ_BLOCK, new FabricItemSettings().group(ItemGroup.MISC)));
 
 		LOGGER.info("Hello Fabric world!");
 	}
