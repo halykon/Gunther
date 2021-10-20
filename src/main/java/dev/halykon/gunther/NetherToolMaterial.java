@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package dev.halykon.gunter;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
@@ -6,7 +6,7 @@ import net.minecraft.recipe.Ingredient;
 
 public class NetherToolMaterial implements ToolMaterial {
 
-    public static final net.fabricmc.example.NetherToolMaterial INSTANCE = new net.fabricmc.example.NetherToolMaterial();
+    public static final NetherToolMaterial INSTANCE = new NetherToolMaterial();
 
     @Override
     public int getDurability() {

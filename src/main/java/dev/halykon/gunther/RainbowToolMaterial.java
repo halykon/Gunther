@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package dev.halykon.gunter;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
