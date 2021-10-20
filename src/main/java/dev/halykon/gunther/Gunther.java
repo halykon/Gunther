@@ -1,10 +1,7 @@
 package dev.halykon.gunther;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -21,6 +18,7 @@ public class Gunther implements ModInitializer {
 
 	public static ToolItem RAINBOW_SWORD = new SwordItem(RainbowToolMaterial.INSTANCE, 5, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
 	public static ToolItem NETHER_SWORD = new SwordItem(RainbowToolMaterial.INSTANCE, 100, -2.0F, new Item.Settings().group(ItemGroup.COMBAT));
+	public static TridentItem POSEIDONS_TRIDENT = new TridentItem(new Item.Settings().group(ItemGroup.COMBAT).maxDamage(250));
 
 	@Override
 	public void onInitialize() {
@@ -29,6 +27,7 @@ public class Gunther implements ModInitializer {
 		// Proceed with mild caution.
 		Registry.register(Registry.ITEM, new Identifier("gunther", "rainbow_sword"), RAINBOW_SWORD);
 		Registry.register(Registry.ITEM, new Identifier("gunther", "nether_sword"), NETHER_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("gunther", "poseidons_trident"), POSEIDONS_TRIDENT);
 
 		LOGGER.info("Hello Fabric world!");
 	}
