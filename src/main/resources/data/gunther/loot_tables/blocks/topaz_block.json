@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gunther:topaz_block"
+          "name": "gunther:topaz"
         }
       ],
       "conditions": [

@@ -1,4 +1,4 @@
-package dev.halykon.gunther;
+package dev.halykon.gunther.item;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -8,8 +8,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class RainbowSword extends Item {
-    public RainbowSword(Settings settings) {
+public class NetherSword extends Item {
+    public NetherSword(Settings settings) {
         super(settings);
     }
 
