@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "gunther:topaz_block"
+    "gunther:topaz_block",
+    "gunther:ruby_block"
   ]
 }

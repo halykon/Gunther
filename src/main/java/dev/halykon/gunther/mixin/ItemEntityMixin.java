@@ -39,7 +39,7 @@ public abstract class ItemEntityMixin extends Entity {
         Vec3d POS = getPos();
 
         if(ITEM == Items.DIAMOND_SWORD) {
-            List<Item> REQUIRED_ITEMS = Arrays.asList(Items.AMETHYST_SHARD, Items.DIAMOND_SWORD, Items.EMERALD, Items.REDSTONE, ModItems.TOPAZ);
+            List<Item> REQUIRED_ITEMS = Arrays.asList(Items.AMETHYST_SHARD, Items.DIAMOND_SWORD, Items.EMERALD, ModItems.TOPAZ, ModItems.RUBY);
 //            Gunther.LOGGER.info(String.format("Hey, i am a %s at %s, %s, %s", ITEM, POS.getX(), POS.getY(), POS.getZ()));
             List<ItemEntity> ITEMS = this.world.getEntitiesByClass(ItemEntity.class, this.getBoundingBox().expand(0.5D, 0.0D, 0.5D), (itemEntityx) -> {
                 return REQUIRED_ITEMS.contains(itemEntityx.getStack().getItem());

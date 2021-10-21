@@ -22,6 +22,15 @@ public class ModBlocks {
             )
     );
 
+    public static final Block RUBY_ORE = registerBlock("ruby_block",
+            new Block(FabricBlockSettings
+                    .of(Material.METAL)
+                    .strength(3.0f)
+                    .breakByTool(FabricToolTags.PICKAXES, 2)
+                    .requiresTool()
+            )
+    );
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, new Identifier(Gunther.MOD_ID, name), block);
