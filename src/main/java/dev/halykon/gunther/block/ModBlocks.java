@@ -22,6 +22,13 @@ public class ModBlocks {
             )
     );
 
+    public static final Block LASER_BLOCK = registerBlock("laser_block",
+            new LaserBlock(FabricBlockSettings
+                    .of(Material.METAL)
+                    .strength(4.0f)
+            )
+    );
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, new Identifier(Gunther.MOD_ID, name), block);

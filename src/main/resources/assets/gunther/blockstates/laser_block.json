@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "gunther:block/laser_block" }
+  }
+}
