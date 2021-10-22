@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": {"model": "gunther:block/laser_block_active","y":  0},
-    "facing=south": {"model": "gunther:block/laser_block_active", "y": 180},
-    "facing=west": {"model": "gunther:block/laser_block_active", "y": 270},
-    "facing=east": {"model": "gunther:block/laser_block_active", "y": 90}
-  }
-}

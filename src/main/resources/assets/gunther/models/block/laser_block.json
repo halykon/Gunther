@@ -1,5 +1,6 @@
 {
   "parent": "block/orientable",
+
   "textures": {
     "top": "gunther:block/laser_block_top",
     "front": "gunther:block/laser_block",
