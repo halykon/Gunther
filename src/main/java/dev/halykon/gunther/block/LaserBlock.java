@@ -56,11 +56,12 @@ public class LaserBlock extends HorizontalFacingBlock {
         int current_y = pos.getY();
         int current_z = pos.getZ();
 
-        if (world.getBlockState(pos).get(Properties.HORIZONTAL_FACING) == Direction.EAST) {
-            for (int i = 1; i <= 11; i++) {
+        Direction dir = world.getBlockState(pos).get(Properties.HORIZONTAL_FACING);
+
+        for (int i = 1; i <= 11; i++) {
+            if (dir == Direction.EAST) {
                 int check_x = current_x + i;
                 BlockPos x = new BlockPos(check_x, current_y, current_z);
-                System.out.println(world.getBlockState(x).getBlock());
 
                 Block new_block = world.getBlockState(x).getBlock();
                 Block current_block = world.getBlockState(pos).getBlock();
@@ -71,15 +72,24 @@ public class LaserBlock extends HorizontalFacingBlock {
                     Boolean new_block_state = world.getBlockState(x).get(ACTIVATED);
                     System.out.println(new_block_state);
 
-                    Direction direction = world.getBlockState(pos).get(Properties.HORIZONTAL_FACING);
-                    if (new_block_state) {
-                        System.out.println("is activate ja");
+                    Direction direction = world.getBlockState(x).get(Properties.HORIZONTAL_FACING);
+                    if (new_block_state && direction == Direction.WEST) {
+                        System.out.println("is activate and right direction ja");
+
+                        int blocks_between = check_x - current_x;
+                        for (int a = 1; a<blocks_between; a++) {
+                            BlockPos x_new = new BlockPos(current_x + a, current_y, current_z);
+                            BlockState state_new = Blocks.BIRCH_FENCE.getDefaultState();
+                            world.setBlockState(x_new, state_new);
+                        }
+
                     } else {
                         System.out.println("is deactivate sadge");
                     }
                 }
             }
         }
+
 
         if (world.getBlockState(pos).get(Properties.HORIZONTAL_FACING) == Direction.NORTH) {
             System.out.println(Direction.NORTH);
